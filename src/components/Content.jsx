@@ -1,5 +1,6 @@
 import { useState } from "react";
-import PersonalDetails from "./PersonalDetails";
+import Resume from "./resume/Resume";
+import InputForm from "./forms/InputForm";
 
 function Content() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -9,11 +10,39 @@ function Content() {
     address: "",
   });
 
+  const [education, setEducation] = useState({
+    school: "",
+    degree: "",
+    startDate: "",
+    endDate: "",
+    location: "",
+  });
+
+  const [experience, setExperience] = useState({
+    companyName: "",
+    positionTitle: "",
+    startDate: "",
+    endDate: "",
+    location: "",
+    description: "",
+  });
+
   return (
-    <PersonalDetails
-      personalDetails={personalDetails}
-      setPersonalDetails={setPersonalDetails}
-    />
+    <>
+      <InputForm
+        personalDetails={personalDetails}
+        setPersonalDetails={setPersonalDetails}
+        education={education}
+        setEducation={setEducation}
+        experience={experience}
+        setExperience={setExperience}
+      />
+      <Resume
+        personalDetails={personalDetails}
+        education={education}
+        experience={experience}
+      />
+    </>
   );
 }
 

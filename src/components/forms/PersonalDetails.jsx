@@ -1,4 +1,4 @@
-import InputGroup from "./InputGroup";
+import InputGroup from "../InputGroup";
 
 function PersonalDetails({ personalDetails, setPersonalDetails }) {
   function handlePersonalDetailsChange(inputName, e) {
