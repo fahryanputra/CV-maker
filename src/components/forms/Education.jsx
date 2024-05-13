@@ -26,17 +26,17 @@ function Education({ education, setEducation }) {
       />
       <InputGroup
         id="education-start-date"
-        labelText="Start Date"
-        type="date"
-        placeholder="Start date"
+        labelText="Start Year"
+        type="text"
+        placeholder="Start year"
         onChange={(e) => handleEducationChange("startDate", e)}
         value={education.startDate}
       />
       <InputGroup
         id="education-end-date"
-        labelText="End Date"
-        type="date"
-        placeholder="End date"
+        labelText="End Year"
+        type="text"
+        placeholder='End year or "Present"'
         onChange={(e) => handleEducationChange("endDate", e)}
         value={education.endDate}
       />

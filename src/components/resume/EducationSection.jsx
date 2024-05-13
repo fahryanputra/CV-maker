@@ -1,26 +1,37 @@
+import "../../styles/EducationSection.css";
+
 function EducationSection({ education }) {
   return (
     <div>
       <h2>Education</h2>
-      <div>
-        <span>School:</span>
-        {education.school && <span>{education.school}</span>}
+      <hr />
+      <div className="resume-school">
+        <div>
+          {education.school ? <p>{education.school}</p> : <p>School</p>}
+        </div>
+        <div className="school-location">
+          {education.location ? <p>{education.location}</p> : <p>Location</p>}
+        </div>
       </div>
-      <div>
-        <span>Degree:</span>
-        {education.degree && <span>{education.degree}</span>}
-      </div>
-      <div>
-        <span>Start Date:</span>
-        {education.startDate && <span>{education.startDate}</span>}
-      </div>
-      <div>
-        <span>End Date:</span>
-        {education.endDate && <span>{education.endDate}</span>}
-      </div>
-      <div>
-        <span>Location:</span>
-        {education.location && <span>{education.location}</span>}
+      <div className="resume-degree">
+        <div>
+          {education.degree ? <p>{education.degree}</p> : <p>Degree</p>}
+        </div>
+        <div className="degree-date">
+          <p>
+            {education.startDate ? (
+              <span>{education.startDate}</span>
+            ) : (
+              <span>Start Date</span>
+            )}
+            <span> - </span>
+            {education.endDate ? (
+              <span>{education.endDate}</span>
+            ) : (
+              <span>End Date</span>
+            )}
+          </p>
+        </div>
       </div>
     </div>
   );

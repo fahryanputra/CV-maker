@@ -1,3 +1,4 @@
+import "../styles/Content.css";
 import { useState } from "react";
 import Resume from "./resume/Resume";
 import InputForm from "./forms/InputForm";
@@ -8,14 +9,7 @@ function Content() {
     email: "",
     phone: "",
     address: "",
-  });
-
-  const [education, setEducation] = useState({
-    school: "",
-    degree: "",
-    startDate: "",
-    endDate: "",
-    location: "",
+    profile: "",
   });
 
   const [experience, setExperience] = useState({
@@ -27,22 +21,34 @@ function Content() {
     description: "",
   });
 
+  const [education, setEducation] = useState({
+    school: "",
+    degree: "",
+    startDate: "",
+    endDate: "",
+    location: "",
+  });
+
   return (
-    <>
-      <InputForm
-        personalDetails={personalDetails}
-        setPersonalDetails={setPersonalDetails}
-        education={education}
-        setEducation={setEducation}
-        experience={experience}
-        setExperience={setExperience}
-      />
-      <Resume
-        personalDetails={personalDetails}
-        education={education}
-        experience={experience}
-      />
-    </>
+    <div className="content">
+      <div className="form">
+        <InputForm
+          personalDetails={personalDetails}
+          setPersonalDetails={setPersonalDetails}
+          experience={experience}
+          setExperience={setExperience}
+          education={education}
+          setEducation={setEducation}
+        />
+      </div>
+      <div className="resume">
+        <Resume
+          personalDetails={personalDetails}
+          education={education}
+          experience={experience}
+        />
+      </div>
+    </div>
   );
 }
 

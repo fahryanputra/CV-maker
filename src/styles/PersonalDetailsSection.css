@@ -1,0 +1,16 @@
+.personal-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.resume-contact {
+  display: flex;
+  gap: 1rem;
+}
+
+.resume-profile {
+  padding: 8px 5px;
+  text-align: justify;
+}

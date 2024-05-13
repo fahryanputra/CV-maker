@@ -1,9 +1,13 @@
+import "../styles/InputGroup.css";
+
 function InputGroup({ id, labelText, type, placeholder, onChange, value }) {
   return (
     <div className="input-group">
-      <label htmlFor={id}>
-        <span className="label-text">{labelText}</span>
-      </label>
+      <div>
+        <label htmlFor={id}>
+          <span className="label-text">{labelText}</span>
+        </label>
+      </div>
 
       {type === "textarea" ? (
         <textarea

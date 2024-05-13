@@ -40,6 +40,13 @@ function PersonalDetails({ personalDetails, setPersonalDetails }) {
         onChange={(e) => handlePersonalDetailsChange("address", e)}
         value={personalDetails.address}
       />
+      <InputGroup
+        id="profile"
+        labelText="Personal profile"
+        type="textarea"
+        placeholder="Short summary about yourself"
+        onChange={(e) => handlePersonalDetailsChange("profile", e)}
+      />
     </form>
   );
 }

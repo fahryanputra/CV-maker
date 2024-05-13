@@ -16,8 +16,8 @@ function InputForm({
         personalDetails={personalDetails}
         setPersonalDetails={setPersonalDetails}
       />
-      <Education education={education} setEducation={setEducation} />
       <Experience experience={experience} setExperience={setExperience} />
+      <Education education={education} setEducation={setEducation} />
     </>
   );
 }

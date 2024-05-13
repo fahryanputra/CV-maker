@@ -1,0 +1,17 @@
+.resume-company {
+  display: flex;
+  font-weight: bold;
+}
+
+.resume-company > .company-location {
+  margin-left: auto;
+}
+
+.resume-job {
+  display: flex;
+  font-weight: bold;
+}
+
+.resume-job > .job-date {
+  margin-left: auto;
+}

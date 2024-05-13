@@ -34,17 +34,17 @@ function Experience({ experience, setExperience }) {
       />
       <InputGroup
         id="experience-start-date"
-        labelText="Start Date"
-        type="date"
-        placeholder="Start date"
+        labelText="Start Year"
+        type="text"
+        placeholder="Start year"
         onChange={(e) => handleExperienceChange("startDate", e)}
         value={setExperience.startDate}
       />
       <InputGroup
         id="experience-end-date"
-        labelText="End Date"
-        type="date"
-        placeholder="End date"
+        labelText="End Year"
+        type="text"
+        placeholder='End year or "Present"'
         onChange={(e) => handleExperienceChange("endDate", e)}
         value={setExperience.endDate}
       />

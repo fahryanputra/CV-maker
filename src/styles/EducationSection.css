@@ -1,0 +1,17 @@
+.resume-school {
+  display: flex;
+  font-weight: bold;
+}
+
+.resume-school > .school-location {
+  margin-left: auto;
+}
+
+.resume-degree {
+  display: flex;
+  font-weight: bold;
+}
+
+.resume-degree > .degree-date {
+  margin-left: auto;
+}

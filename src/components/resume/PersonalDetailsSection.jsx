@@ -1,22 +1,44 @@
+import "../../styles/PersonalDetailsSection.css";
+
 function PersonalDetailsSection({ personalDetails }) {
   return (
     <div>
-      <h2>Personal Details</h2>
-      <div>
-        <span>Name:</span>
-        {personalDetails.fullName && <span>{personalDetails.fullName}</span>}
+      <div className="personal-section">
+        <div className="resume-name">
+          {personalDetails.fullName ? (
+            <h2>{personalDetails.fullName}</h2>
+          ) : (
+            <h2>Full Name</h2>
+          )}
+        </div>
+        <div className="resume-contact">
+          <div>
+            {personalDetails.email ? (
+              <p>{personalDetails.email}</p>
+            ) : (
+              <p>Email</p>
+            )}
+          </div>
+          <p>|</p>
+          <div>
+            {personalDetails.phone ? (
+              <p>{personalDetails.phone}</p>
+            ) : (
+              <p>Phone Number</p>
+            )}
+          </div>
+          <p>|</p>
+          <div>
+            {personalDetails.address ? (
+              <p>{personalDetails.address}</p>
+            ) : (
+              <p>Address</p>
+            )}
+          </div>
+        </div>
       </div>
-      <div>
-        <span>Email:</span>
-        {personalDetails.email && <span>{personalDetails.email}</span>}
-      </div>
-      <div>
-        <span>Phone Number:</span>
-        {personalDetails.phone && <span>{personalDetails.phone}</span>}
-      </div>
-      <div>
-        <span>Address:</span>
-        {personalDetails.address && <span>{personalDetails.address}</span>}
+      <div className="resume-profile">
+        {personalDetails.profile && <p>{personalDetails.profile}</p>}
       </div>
     </div>
   );
