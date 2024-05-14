@@ -1,3 +1,10 @@
+.resume-name {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 26px;
+  font-weight: bold;
+}
+
 .personal-section {
   display: flex;
   flex-direction: column;

@@ -1,13 +1,17 @@
 import InputGroup from "../InputGroup";
 
-function PersonalDetails({ personalDetails, setPersonalDetails }) {
+function PersonalDetails({
+  personalDetails,
+  setPersonalDetails,
+  isActive,
+  onShow,
+}) {
   function handlePersonalDetailsChange(inputName, e) {
     setPersonalDetails({ ...personalDetails, [inputName]: e.target.value });
   }
 
-  return (
-    <form className="personal-details">
-      <h2>Personal Details</h2>
+  const children = (
+    <div>
       <InputGroup
         id="full-name"
         labelText="Full Name"
@@ -47,6 +51,13 @@ function PersonalDetails({ personalDetails, setPersonalDetails }) {
         placeholder="Short summary about yourself"
         onChange={(e) => handlePersonalDetailsChange("profile", e)}
       />
+    </div>
+  );
+
+  return (
+    <form className="personal-details">
+      <h2 onClick={onShow}>Personal Details</h2>
+      {isActive && children}
     </form>
   );
 }

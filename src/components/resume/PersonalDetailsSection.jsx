@@ -8,7 +8,7 @@ function PersonalDetailsSection({ personalDetails }) {
           {personalDetails.fullName ? (
             <h2>{personalDetails.fullName}</h2>
           ) : (
-            <h2>Full Name</h2>
+            <p className="resume-name">Full Name</p>
           )}
         </div>
         <div className="resume-contact">
@@ -38,7 +38,11 @@ function PersonalDetailsSection({ personalDetails }) {
         </div>
       </div>
       <div className="resume-profile">
-        {personalDetails.profile && <p>{personalDetails.profile}</p>}
+        {personalDetails.profile ? (
+          <p>{personalDetails.profile}</p>
+        ) : (
+          <p>Self Description</p>
+        )}{" "}
       </div>
     </div>
   );

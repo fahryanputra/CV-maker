@@ -3,4 +3,17 @@
   width: 595px;
   height: 842px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }

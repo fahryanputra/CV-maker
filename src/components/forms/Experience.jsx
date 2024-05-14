@@ -1,13 +1,12 @@
 import InputGroup from "../InputGroup";
 
-function Experience({ experience, setExperience }) {
+function Experience({ experience, setExperience, isActive, onShow }) {
   function handleExperienceChange(inputName, e) {
     setExperience({ ...experience, [inputName]: e.target.value });
   }
 
-  return (
-    <form className="experience">
-      <h2>Experience</h2>
+  const form = (
+    <div>
       <InputGroup
         id="company-name"
         labelText="Company Name"
@@ -56,6 +55,14 @@ function Experience({ experience, setExperience }) {
         onChange={(e) => handleExperienceChange("location", e)}
         value={setExperience.location}
       />
+      <button>Add</button>
+    </div>
+  );
+
+  return (
+    <form className="experience">
+      <h2 onClick={onShow}>Experience</h2>
+      {isActive && form}
     </form>
   );
 }

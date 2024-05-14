@@ -1,13 +1,12 @@
 import InputGroup from "../InputGroup";
 
-function Education({ education, setEducation }) {
+function Education({ education, setEducation, isActive, onShow }) {
   function handleEducationChange(inputName, e) {
     setEducation({ ...education, [inputName]: e.target.value });
   }
 
-  return (
-    <form className="education">
-      <h2>Education</h2>
+  const children = (
+    <div>
       <InputGroup
         id="school"
         labelText="School"
@@ -48,6 +47,13 @@ function Education({ education, setEducation }) {
         onChange={(e) => handleEducationChange("location", e)}
         value={education.location}
       />
+    </div>
+  );
+
+  return (
+    <form className="education">
+      <h2 onClick={onShow}>Education</h2>
+      {isActive && children}
     </form>
   );
 }

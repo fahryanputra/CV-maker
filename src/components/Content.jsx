@@ -1,7 +1,7 @@
 import "../styles/Content.css";
-import { useState } from "react";
 import Resume from "./resume/Resume";
 import InputForm from "./forms/InputForm";
+import { useState } from "react";
 
 function Content() {
   const [personalDetails, setPersonalDetails] = useState({
