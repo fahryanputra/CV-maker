@@ -1,50 +1,46 @@
 import "../../styles/EducationSection.css";
 
-function EducationSection({ data }) {
+function EducationPreview(education) {
   return (
-    <div>
-      <h2>Education</h2>
-      <hr />
+    <div key={education.id}>
       <div className="resume-school">
         <div>
-          {data.educations[0].school ? (
-            <p>{data.educations[0].school}</p>
-          ) : (
-            <p>School</p>
-          )}
+          {education.school ? <p>{education.school}</p> : <p>School</p>}
         </div>
         <div className="school-location">
-          {data.educations[0].location ? (
-            <p>{data.educations[0].location}</p>
-          ) : (
-            <p>Location</p>
-          )}
+          {education.location ? <p>{education.location}</p> : <p>Location</p>}
         </div>
       </div>
       <div className="resume-degree">
         <div>
-          {data.educations[0].degree ? (
-            <p>{data.educations[0].degree}</p>
-          ) : (
-            <p>Degree</p>
-          )}
+          {education.degree ? <p>{education.degree}</p> : <p>Degree</p>}
         </div>
         <div className="degree-date">
           <p>
-            {data.educations[0].startDate ? (
-              <span>{data.educations[0].startDate}</span>
+            {education.startDate ? (
+              <span>{education.startDate}</span>
             ) : (
               <span>Start Date</span>
             )}
             <span> - </span>
-            {data.educations[0].endDate ? (
-              <span>{data.educations[0].endDate}</span>
+            {education.endDate ? (
+              <span>{education.endDate}</span>
             ) : (
               <span>End Date</span>
             )}
           </p>
         </div>
       </div>
+    </div>
+  );
+}
+
+function EducationSection({ data }) {
+  return (
+    <div>
+      <h2>Education</h2>
+      <hr />
+      {data.educations.map((education) => EducationPreview(education))}
     </div>
   );
 }
