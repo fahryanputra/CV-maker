@@ -3,37 +3,26 @@ import Education from "./Education";
 import Experience from "./Experience";
 import { useState } from "react";
 
-function InputForm({
-  personalDetails,
-  setPersonalDetails,
-  education,
-  setEducation,
-  experience,
-  setExperience,
-  data,
-  setData,
-}) {
+function InputForm({ data, setData }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <>
       <PersonalDetails
-        personalDetails={personalDetails}
-        setPersonalDetails={setPersonalDetails}
+        data={data}
+        setData={setData}
         isActive={activeIndex === 0}
         onShow={() => setActiveIndex(0)}
       />
       <Experience
-        experience={experience}
-        setExperience={setExperience}
         data={data}
         setData={setData}
         isActive={activeIndex === 1}
         onShow={() => setActiveIndex(1)}
       />
       <Education
-        education={education}
-        setEducation={setEducation}
+        data={data}
+        setData={setData}
         isActive={activeIndex === 2}
         onShow={() => setActiveIndex(2)}
       />

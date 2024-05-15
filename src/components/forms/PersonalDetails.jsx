@@ -1,13 +1,11 @@
 import InputGroup from "../InputGroup";
 
-function PersonalDetails({
-  personalDetails,
-  setPersonalDetails,
-  isActive,
-  onShow,
-}) {
+function PersonalDetails({ data, setData, isActive, onShow }) {
   function handlePersonalDetailsChange(inputName, e) {
-    setPersonalDetails({ ...personalDetails, [inputName]: e.target.value });
+    setData({
+      ...data,
+      personalDetails: { ...data.personalDetails, [inputName]: e.target.value },
+    });
   }
 
   const children = (
@@ -18,7 +16,7 @@ function PersonalDetails({
         type="text"
         placeholder="First and last name"
         onChange={(e) => handlePersonalDetailsChange("fullName", e)}
-        value={personalDetails.fullName}
+        value={data.personalDetails.fullName}
       />
       <InputGroup
         id="email"
@@ -26,7 +24,7 @@ function PersonalDetails({
         type="email"
         placeholder="Email address"
         onChange={(e) => handlePersonalDetailsChange("email", e)}
-        value={personalDetails.email}
+        value={data.personalDetails.email}
       />
       <InputGroup
         id="phone"
@@ -34,7 +32,7 @@ function PersonalDetails({
         type="tel"
         placeholder="Phone number"
         onChange={(e) => handlePersonalDetailsChange("phone", e)}
-        value={personalDetails.phone}
+        value={data.personalDetails.phone}
       />
       <InputGroup
         id="address"
@@ -42,7 +40,7 @@ function PersonalDetails({
         type="textarea"
         placeholder="Home address"
         onChange={(e) => handlePersonalDetailsChange("address", e)}
-        value={personalDetails.address}
+        value={data.personalDetails.address}
       />
       <InputGroup
         id="profile"

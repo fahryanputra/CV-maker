@@ -1,32 +1,44 @@
 import "../../styles/EducationSection.css";
 
-function EducationSection({ education }) {
+function EducationSection({ data }) {
   return (
     <div>
       <h2>Education</h2>
       <hr />
       <div className="resume-school">
         <div>
-          {education.school ? <p>{education.school}</p> : <p>School</p>}
+          {data.educations[0].school ? (
+            <p>{data.educations[0].school}</p>
+          ) : (
+            <p>School</p>
+          )}
         </div>
         <div className="school-location">
-          {education.location ? <p>{education.location}</p> : <p>Location</p>}
+          {data.educations[0].location ? (
+            <p>{data.educations[0].location}</p>
+          ) : (
+            <p>Location</p>
+          )}
         </div>
       </div>
       <div className="resume-degree">
         <div>
-          {education.degree ? <p>{education.degree}</p> : <p>Degree</p>}
+          {data.educations[0].degree ? (
+            <p>{data.educations[0].degree}</p>
+          ) : (
+            <p>Degree</p>
+          )}
         </div>
         <div className="degree-date">
           <p>
-            {education.startDate ? (
-              <span>{education.startDate}</span>
+            {data.educations[0].startDate ? (
+              <span>{data.educations[0].startDate}</span>
             ) : (
               <span>Start Date</span>
             )}
             <span> - </span>
-            {education.endDate ? (
-              <span>{education.endDate}</span>
+            {data.educations[0].endDate ? (
+              <span>{data.educations[0].endDate}</span>
             ) : (
               <span>End Date</span>
             )}

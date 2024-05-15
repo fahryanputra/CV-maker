@@ -3,12 +3,12 @@ import EducationSection from "./EducationSection";
 import ExperienceSection from "./ExperienceSection";
 import PersonalDetailsSection from "./PersonalDetailsSection";
 
-function Resume({ personalDetails, education, experience }) {
+function Resume({ data }) {
   return (
     <div className="preview">
-      <PersonalDetailsSection personalDetails={personalDetails} />
-      <ExperienceSection experience={experience} />
-      <EducationSection education={education} />
+      <PersonalDetailsSection data={data} />
+      <ExperienceSection data={data} />
+      <EducationSection data={data} />
     </div>
   );
 }
