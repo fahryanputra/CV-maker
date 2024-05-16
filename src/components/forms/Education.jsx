@@ -1,4 +1,5 @@
 import InputGroup from "../InputGroup";
+import { v4 as uuidv4 } from "uuid";
 
 function EducationForm(data, setData, education) {
   function handleEducationChange(id, inputName, e) {
@@ -58,6 +59,24 @@ function EducationForm(data, setData, education) {
 }
 
 function Education({ data, setData, isActive, onShow }) {
+  function addEducation(data, setData, e) {
+    e.preventDefault();
+    setData({
+      ...data,
+      educations: [
+        ...data.educations,
+        {
+          id: uuidv4(),
+          school: "",
+          degree: "",
+          startDate: "",
+          endDate: "",
+          location: "",
+        },
+      ],
+    });
+  }
+
   return (
     <form className="education">
       <h2 onClick={onShow}>Education</h2>
@@ -65,6 +84,11 @@ function Education({ data, setData, isActive, onShow }) {
         data.educations.map((education) =>
           EducationForm(data, setData, education)
         )}
+      {isActive && data.educations.length < 3 && (
+        <button onClick={(e) => addEducation(data, setData, e)}>
+          Add education
+        </button>
+      )}
     </form>
   );
 }

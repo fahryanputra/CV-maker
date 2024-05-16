@@ -1,4 +1,5 @@
 import InputGroup from "../InputGroup";
+import { v4 as uuidv4 } from "uuid";
 
 function ExperienceForm(data, setData, experience) {
   function handleExperienceChange(id, inputName, e) {
@@ -67,12 +68,30 @@ function ExperienceForm(data, setData, experience) {
         onChange={(e) => handleExperienceChange(experience.id, "location", e)}
         value={experience.location}
       />
-      <button>Add</button>
     </div>
   );
 }
 
 function Experience({ data, setData, isActive, onShow }) {
+  function addExperience(data, setData, e) {
+    e.preventDefault();
+    setData({
+      ...data,
+      experiences: [
+        ...data.experiences,
+        {
+          id: uuidv4(),
+          companyName: "",
+          positionTitle: "",
+          startDate: "",
+          endDate: "",
+          location: "",
+          description: "",
+        },
+      ],
+    });
+  }
+
   return (
     <form className="experience">
       <h2 onClick={onShow}>Experience</h2>
@@ -80,6 +99,11 @@ function Experience({ data, setData, isActive, onShow }) {
         data.experiences.map((experience) =>
           ExperienceForm(data, setData, experience)
         )}
+      {isActive && data.experiences.length < 3 && (
+        <button onClick={(e) => addExperience(data, setData, e)}>
+          Add experience
+        </button>
+      )}
     </form>
   );
 }
