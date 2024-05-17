@@ -1,8 +1,8 @@
 import { useState } from "react";
-import InputGroup from "../InputGroup";
 import { v4 as uuidv4 } from "uuid";
+import EducationForm from "./EducationForm";
 
-function EducationForm(data, setData, education, index, isVisible, onVisible) {
+function Education({ data, setData, isActive, onShow }) {
   function handleEducationChange(id, inputName, e) {
     setData({
       ...data,
@@ -13,62 +13,6 @@ function EducationForm(data, setData, education, index, isVisible, onVisible) {
     });
   }
 
-  return (
-    <div onClick={onVisible} key={education.id}>
-      {isVisible ? (
-        <div>
-          <h4>Education {index + 1}</h4>
-          <InputGroup
-            id={"school-" + index}
-            labelText="School"
-            type="text"
-            placeholder="School or university"
-            onChange={(e) => handleEducationChange(education.id, "school", e)}
-            value={education.school}
-          />
-          <InputGroup
-            id={"degree-" + index}
-            labelText="Degree"
-            type="text"
-            placeholder="Degree or field of study"
-            onChange={(e) => handleEducationChange(education.id, "degree", e)}
-            value={education.degree}
-          />
-          <InputGroup
-            id={"education-start-date-" + index}
-            labelText="Start Year"
-            type="text"
-            placeholder="Start year"
-            onChange={(e) =>
-              handleEducationChange(education.id, "startDate", e)
-            }
-            value={education.startDate}
-          />
-          <InputGroup
-            id={"education-end-date-" + index}
-            labelText="End Year"
-            type="text"
-            placeholder='End year or "Present"'
-            onChange={(e) => handleEducationChange(education.id, "endDate", e)}
-            value={education.endDate}
-          />
-          <InputGroup
-            id={"education-location-" + index}
-            labelText="Location"
-            type="text"
-            placeholder="School's location"
-            onChange={(e) => handleEducationChange(education.id, "location", e)}
-            value={education.location}
-          />
-        </div>
-      ) : (
-        <h4>{education.school ? education.school : "Blank School"}</h4>
-      )}
-    </div>
-  );
-}
-
-function Education({ data, setData, isActive, onShow }) {
   function addEducation(data, setData, e) {
     e.preventDefault();
     setData({
@@ -94,16 +38,16 @@ function Education({ data, setData, isActive, onShow }) {
     <form className="education">
       <h2 onClick={onShow}>Education</h2>
       {isActive &&
-        data.educations.map((education, index) =>
-          EducationForm(
-            data,
-            setData,
-            education,
-            index,
-            activeIndex === index,
-            () => setActiveIndex(index)
-          )
-        )}
+        data.educations.map((education, index) => (
+          <EducationForm
+            key={education.id}
+            onChange={handleEducationChange}
+            education={education}
+            index={index}
+            isVisible={activeIndex === index}
+            onVisible={() => setActiveIndex(index)}
+          />
+        ))}
       {isActive && data.educations.length < 3 && (
         <button onClick={(e) => addEducation(data, setData, e)}>
           Add education
