@@ -2,17 +2,7 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import ExperienceForm from "./ExperienceForm";
 
-function Experience({ data, setData, isActive, onShow }) {
-  function handleExperienceChange(id, inputName, e) {
-    setData({
-      ...data,
-      experiences: data.experiences.map((experience) => {
-        if (experience.id === id) experience[inputName] = e.target.value;
-        return experience;
-      }),
-    });
-  }
-
+function Experience({ data, setData, onChange, isActive, onShow }) {
   function addExperience(data, setData, e) {
     e.preventDefault();
     setData({
@@ -42,7 +32,7 @@ function Experience({ data, setData, isActive, onShow }) {
         data.experiences.map((experience, index) => (
           <ExperienceForm
             key={experience.id}
-            onChange={handleExperienceChange}
+            onChange={onChange}
             experience={experience}
             index={index}
             isVisible={activeIndex === index}

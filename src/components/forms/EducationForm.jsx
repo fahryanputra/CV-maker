@@ -1,6 +1,7 @@
 import InputGroup from "../InputGroup";
 
 function EducationForm({ onChange, education, index, isVisible, onVisible }) {
+  const formName = "educations";
   return (
     <div onClick={onVisible} key={education.id}>
       {isVisible ? (
@@ -11,7 +12,7 @@ function EducationForm({ onChange, education, index, isVisible, onVisible }) {
             labelText="School"
             type="text"
             placeholder="School or university"
-            onChange={(e) => onChange(education.id, "school", e)}
+            onChange={(e) => onChange(e, formName, education.id, "school")}
             value={education.school}
           />
           <InputGroup
@@ -19,7 +20,7 @@ function EducationForm({ onChange, education, index, isVisible, onVisible }) {
             labelText="Degree"
             type="text"
             placeholder="Degree or field of study"
-            onChange={(e) => onChange(education.id, "degree", e)}
+            onChange={(e) => onChange(e, formName, education.id, "degree")}
             value={education.degree}
           />
           <InputGroup
@@ -27,7 +28,7 @@ function EducationForm({ onChange, education, index, isVisible, onVisible }) {
             labelText="Start Year"
             type="text"
             placeholder="Start year"
-            onChange={(e) => onChange(education.id, "startDate", e)}
+            onChange={(e) => onChange(e, formName, education.id, "startDate")}
             value={education.startDate}
           />
           <InputGroup
@@ -35,7 +36,7 @@ function EducationForm({ onChange, education, index, isVisible, onVisible }) {
             labelText="End Year"
             type="text"
             placeholder='End year or "Present"'
-            onChange={(e) => onChange(education.id, "endDate", e)}
+            onChange={(e) => onChange(e, formName, education.id, "endDate")}
             value={education.endDate}
           />
           <InputGroup
@@ -43,7 +44,7 @@ function EducationForm({ onChange, education, index, isVisible, onVisible }) {
             labelText="Location"
             type="text"
             placeholder="School's location"
-            onChange={(e) => onChange(education.id, "location", e)}
+            onChange={(e) => onChange(e, formName, education.id, "location")}
             value={education.location}
           />
         </div>

@@ -1,6 +1,8 @@
 import InputGroup from "../InputGroup";
 
 function ExperienceForm({ onChange, experience, index, isVisible, onVisible }) {
+  const formName = "experiences";
+
   return (
     <div onClick={onVisible} key={experience.id}>
       {isVisible ? (
@@ -12,7 +14,7 @@ function ExperienceForm({ onChange, experience, index, isVisible, onVisible }) {
             type="text"
             placeholder="Company name"
             onChange={(e) => {
-              onChange(experience.id, "companyName", e);
+              onChange(e, formName, experience.id, "companyName");
             }}
             value={experience.companyName}
           />
@@ -21,7 +23,9 @@ function ExperienceForm({ onChange, experience, index, isVisible, onVisible }) {
             labelText="Position Title"
             type="text"
             placeholder="Position title"
-            onChange={(e) => onChange(experience.id, "positionTitle", e)}
+            onChange={(e) =>
+              onChange(e, formName, experience.id, "positionTitle")
+            }
             value={experience.positionTitle}
           />
           <InputGroup
@@ -29,7 +33,9 @@ function ExperienceForm({ onChange, experience, index, isVisible, onVisible }) {
             labelText="Description"
             type="textarea"
             placeholder="Job description"
-            onChange={(e) => onChange(experience.id, "description", e)}
+            onChange={(e) =>
+              onChange(e, formName, experience.id, "description")
+            }
             value={experience.description}
           />
           <InputGroup
@@ -37,7 +43,7 @@ function ExperienceForm({ onChange, experience, index, isVisible, onVisible }) {
             labelText="Start Year"
             type="text"
             placeholder="Start year"
-            onChange={(e) => onChange(experience.id, "startDate", e)}
+            onChange={(e) => onChange(e, formName, experience.id, "startDate")}
             value={experience.startDate}
           />
           <InputGroup
@@ -45,7 +51,7 @@ function ExperienceForm({ onChange, experience, index, isVisible, onVisible }) {
             labelText="End Year"
             type="text"
             placeholder='End year or "Present"'
-            onChange={(e) => onChange(experience.id, "endDate", e)}
+            onChange={(e) => onChange(e, formName, experience.id, "endDate")}
             value={experience.endDate}
           />
           <InputGroup
@@ -53,7 +59,7 @@ function ExperienceForm({ onChange, experience, index, isVisible, onVisible }) {
             labelText="Company's Location"
             type="text"
             placeholder="Company's location"
-            onChange={(e) => onChange(experience.id, "location", e)}
+            onChange={(e) => onChange(e, formName, experience.id, "location")}
             value={experience.location}
           />
         </div>

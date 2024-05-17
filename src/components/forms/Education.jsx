@@ -2,17 +2,7 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import EducationForm from "./EducationForm";
 
-function Education({ data, setData, isActive, onShow }) {
-  function handleEducationChange(id, inputName, e) {
-    setData({
-      ...data,
-      educations: data.educations.map((education) => {
-        if (education.id === id) education[inputName] = e.target.value;
-        return education;
-      }),
-    });
-  }
-
+function Education({ data, setData, onChange, isActive, onShow }) {
   function addEducation(data, setData, e) {
     e.preventDefault();
     setData({
@@ -41,7 +31,7 @@ function Education({ data, setData, isActive, onShow }) {
         data.educations.map((education, index) => (
           <EducationForm
             key={education.id}
-            onChange={handleEducationChange}
+            onChange={onChange}
             education={education}
             index={index}
             isVisible={activeIndex === index}
