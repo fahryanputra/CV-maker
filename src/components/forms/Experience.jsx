@@ -2,7 +2,7 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import ExperienceForm from "./ExperienceForm";
 
-function Experience({ data, setData, onChange, isActive, onShow }) {
+function Experience({ data, setData, onChange, isActive, onShow, removeForm }) {
   function addExperience(data, setData, e) {
     e.preventDefault();
     setData({
@@ -37,6 +37,8 @@ function Experience({ data, setData, onChange, isActive, onShow }) {
             index={index}
             isVisible={activeIndex === index}
             onVisible={() => setActiveIndex(index)}
+            removeForm={removeForm}
+            experiencesLength={data.experiences.length}
           />
         ))}
       {isActive && data.experiences.length < 3 && (

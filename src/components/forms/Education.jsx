@@ -2,7 +2,7 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import EducationForm from "./EducationForm";
 
-function Education({ data, setData, onChange, isActive, onShow }) {
+function Education({ data, setData, onChange, isActive, onShow, removeForm }) {
   function addEducation(data, setData, e) {
     e.preventDefault();
     setData({
@@ -36,6 +36,8 @@ function Education({ data, setData, onChange, isActive, onShow }) {
             index={index}
             isVisible={activeIndex === index}
             onVisible={() => setActiveIndex(index)}
+            removeForm={removeForm}
+            educationsLength={data.educations.length}
           />
         ))}
       {isActive && data.educations.length < 3 && (

@@ -1,6 +1,14 @@
 import InputGroup from "../InputGroup";
 
-function EducationForm({ onChange, education, index, isVisible, onVisible }) {
+function EducationForm({
+  onChange,
+  education,
+  index,
+  isVisible,
+  onVisible,
+  removeForm,
+  educationsLength,
+}) {
   const formName = "educations";
   return (
     <div onClick={onVisible} key={education.id}>
@@ -47,6 +55,17 @@ function EducationForm({ onChange, education, index, isVisible, onVisible }) {
             onChange={(e) => onChange(e, formName, education.id, "location")}
             value={education.location}
           />
+
+          {educationsLength > 1 && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                removeForm("educations", education.id);
+              }}
+            >
+              Delete
+            </button>
+          )}
         </div>
       ) : (
         <h4>{education.school ? education.school : "Blank School"}</h4>

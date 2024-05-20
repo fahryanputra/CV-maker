@@ -1,6 +1,14 @@
 import InputGroup from "../InputGroup";
 
-function ExperienceForm({ onChange, experience, index, isVisible, onVisible }) {
+function ExperienceForm({
+  onChange,
+  experience,
+  index,
+  isVisible,
+  onVisible,
+  removeForm,
+  experiencesLength,
+}) {
   const formName = "experiences";
 
   return (
@@ -62,6 +70,17 @@ function ExperienceForm({ onChange, experience, index, isVisible, onVisible }) {
             onChange={(e) => onChange(e, formName, experience.id, "location")}
             value={experience.location}
           />
+
+          {experiencesLength > 1 && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                removeForm("experiences", experience.id);
+              }}
+            >
+              Delete
+            </button>
+          )}
         </div>
       ) : (
         <h4>

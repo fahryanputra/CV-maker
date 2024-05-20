@@ -23,6 +23,13 @@ function InputForm({ data, setData }) {
     }
   }
 
+  function removeForm(formName, id) {
+    setData({
+      ...data,
+      [formName]: data[formName].filter((element) => element.id !== id),
+    });
+  }
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [showChildren, setShowChildren] = useState(true);
 
@@ -40,6 +47,7 @@ function InputForm({ data, setData }) {
         onChange={handleChange}
         isActive={activeIndex === 1 && showChildren}
         onShow={() => toggleFormVisibility(1)}
+        removeForm={removeForm}
       />
       <Education
         data={data}
@@ -47,6 +55,7 @@ function InputForm({ data, setData }) {
         onChange={handleChange}
         isActive={activeIndex === 2 && showChildren}
         onShow={() => toggleFormVisibility(2)}
+        removeForm={removeForm}
       />
     </>
   );
