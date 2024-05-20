@@ -14,29 +14,39 @@ function InputForm({ data, setData }) {
     });
   }
 
+  function toggleFormVisibility(index) {
+    if (activeIndex === index) {
+      showChildren ? setShowChildren(false) : setShowChildren(true);
+    } else {
+      setActiveIndex(index);
+      setShowChildren(true);
+    }
+  }
+
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showChildren, setShowChildren] = useState(true);
 
   return (
     <>
       <PersonalDetails
         data={data}
         setData={setData}
-        isActive={activeIndex === 0}
-        onShow={() => setActiveIndex(0)}
+        isActive={activeIndex === 0 && showChildren}
+        onShow={() => toggleFormVisibility(0)}
       />
       <Experience
         data={data}
         setData={setData}
         onChange={handleChange}
-        isActive={activeIndex === 1}
-        onShow={() => setActiveIndex(1)}
+        isActive={activeIndex === 1 && showChildren}
+        onShow={() => toggleFormVisibility(1)}
       />
       <Education
         data={data}
         setData={setData}
         onChange={handleChange}
-        isActive={activeIndex === 2}
-        onShow={() => setActiveIndex(2)}
+        isActive={activeIndex === 2 && showChildren}
+        onShow={() => toggleFormVisibility(2)}
       />
     </>
   );
