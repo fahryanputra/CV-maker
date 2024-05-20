@@ -35,12 +35,7 @@ function InputForm({ data, setData }) {
 
   return (
     <>
-      <PersonalDetails
-        data={data}
-        setData={setData}
-        isActive={activeIndex === 0 && showChildren}
-        onShow={() => toggleFormVisibility(0)}
-      />
+      <PersonalDetails data={data} setData={setData} />
       <Experience
         data={data}
         setData={setData}

@@ -1,6 +1,6 @@
 import InputGroup from "../InputGroup";
 
-function PersonalDetails({ data, setData, isActive, onShow }) {
+function PersonalDetails({ data, setData }) {
   function handlePersonalDetailsChange(inputName, e) {
     setData({
       ...data,
@@ -54,8 +54,8 @@ function PersonalDetails({ data, setData, isActive, onShow }) {
 
   return (
     <form className="personal-details">
-      <h2 onClick={onShow}>Personal Details</h2>
-      {isActive && children}
+      <h2>Personal Details</h2>
+      {children}
     </form>
   );
 }
