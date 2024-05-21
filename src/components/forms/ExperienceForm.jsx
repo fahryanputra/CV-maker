@@ -12,10 +12,9 @@ function ExperienceForm({
   const formName = "experiences";
 
   return (
-    <div onClick={onVisible} key={experience.id}>
+    <div className="visible" onClick={onVisible} key={experience.id}>
       {isVisible ? (
         <div>
-          <h4>Experience {index + 1}</h4>
           <InputGroup
             id={"company-name-" + index}
             labelText="Company Name"
@@ -70,21 +69,22 @@ function ExperienceForm({
             onChange={(e) => onChange(e, formName, experience.id, "location")}
             value={experience.location}
           />
-
-          {experiencesLength > 1 && (
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                removeForm("experiences", experience.id);
-              }}
-            >
-              Delete
-            </button>
-          )}
+          <div className="button-delete container">
+            {experiencesLength > 1 && (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  removeForm("experiences", experience.id);
+                }}
+              >
+                Delete
+              </button>
+            )}
+          </div>
         </div>
       ) : (
-        <h4>
-          {experience.companyName ? experience.companyName : "Blank Company"}
+        <h4 className="collapsed">
+          {experience.companyName ? experience.companyName : "No company name"}
         </h4>
       )}
     </div>

@@ -1,3 +1,4 @@
+import "../../styles/InputForm.css";
 import PersonalDetails from "./PersonalDetails";
 import Education from "./Education";
 import Experience from "./Experience";
@@ -34,7 +35,7 @@ function InputForm({ data, setData }) {
   const [showChildren, setShowChildren] = useState(true);
 
   return (
-    <>
+    <div className={"input-form"}>
       <PersonalDetails data={data} setData={setData} />
       <Experience
         data={data}
@@ -52,7 +53,7 @@ function InputForm({ data, setData }) {
         onShow={() => toggleFormVisibility(2)}
         removeForm={removeForm}
       />
-    </>
+    </div>
   );
 }
 

@@ -11,10 +11,9 @@ function EducationForm({
 }) {
   const formName = "educations";
   return (
-    <div onClick={onVisible} key={education.id}>
+    <div className="visible" onClick={onVisible} key={education.id}>
       {isVisible ? (
         <div>
-          <h4>Education {index + 1}</h4>
           <InputGroup
             id={"school-" + index}
             labelText="School"
@@ -55,20 +54,23 @@ function EducationForm({
             onChange={(e) => onChange(e, formName, education.id, "location")}
             value={education.location}
           />
-
-          {educationsLength > 1 && (
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                removeForm("educations", education.id);
-              }}
-            >
-              Delete
-            </button>
-          )}
+          <div className="button-delete container">
+            {educationsLength > 1 && (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  removeForm("educations", education.id);
+                }}
+              >
+                Delete
+              </button>
+            )}
+          </div>
         </div>
       ) : (
-        <h4>{education.school ? education.school : "Blank School"}</h4>
+        <h4 className="collapsed">
+          {education.school ? education.school : "Blank School"}
+        </h4>
       )}
     </div>
   );

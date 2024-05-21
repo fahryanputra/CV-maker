@@ -26,7 +26,7 @@ function Experience({ data, setData, onChange, isActive, onShow, removeForm }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <form className="experience">
+    <form className="experience form-section">
       <h2 onClick={onShow}>Experience</h2>
       {isActive &&
         data.experiences.map((experience, index) => (

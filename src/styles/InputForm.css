@@ -1,0 +1,32 @@
+.input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-form > form > h2 {
+  border: 2px solid black;
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.input-form > form > button {
+  width: 100%;
+}
+
+.input-form > form .collapsed {
+  border: 2px solid black;
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.input-form > form .visible {
+  margin-bottom: 0.5rem;
+}
+
+.input-form > form .button-delete.container {
+  display: flex;
+  justify-content: end;
+}

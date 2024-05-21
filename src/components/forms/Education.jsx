@@ -25,7 +25,7 @@ function Education({ data, setData, onChange, isActive, onShow, removeForm }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <form className="education">
+    <form className="education form-section">
       <h2 onClick={onShow}>Education</h2>
       {isActive &&
         data.educations.map((education, index) => (
