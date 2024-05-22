@@ -10,7 +10,10 @@ function PersonalDetails({ data, setData }) {
 
   return (
     <form className="personal-details form-section">
-      <h2>Personal Details</h2>
+      <h2>
+        <span className="material-symbols-outlined">person</span>Personal
+        Details
+      </h2>
       <div>
         <InputGroup
           id="full-name"

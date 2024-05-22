@@ -62,14 +62,14 @@ function EducationForm({
                   removeForm("educations", education.id);
                 }}
               >
-                Delete
+                <span className="material-symbols-outlined">delete</span>
               </button>
             )}
           </div>
         </div>
       ) : (
         <h4 className="collapsed">
-          {education.school ? education.school : "Blank School"}
+          {education.school ? education.school : "Empty school name"}
         </h4>
       )}
     </div>

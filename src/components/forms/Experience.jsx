@@ -27,7 +27,9 @@ function Experience({ data, setData, onChange, isActive, onShow, removeForm }) {
 
   return (
     <form className="experience form-section">
-      <h2 onClick={onShow}>Experience</h2>
+      <h2 onClick={onShow}>
+        <span className="material-symbols-outlined">work</span>Experience
+      </h2>
       {isActive &&
         data.experiences.map((experience, index) => (
           <ExperienceForm
@@ -43,7 +45,7 @@ function Experience({ data, setData, onChange, isActive, onShow, removeForm }) {
         ))}
       {isActive && data.experiences.length < 3 && (
         <button onClick={(e) => addExperience(data, setData, e)}>
-          Add experience
+          <span className="material-symbols-outlined">add</span>
         </button>
       )}
     </form>

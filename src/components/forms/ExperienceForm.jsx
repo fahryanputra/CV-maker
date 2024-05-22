@@ -77,14 +77,16 @@ function ExperienceForm({
                   removeForm("experiences", experience.id);
                 }}
               >
-                Delete
+                <span className="material-symbols-outlined">delete</span>
               </button>
             )}
           </div>
         </div>
       ) : (
         <h4 className="collapsed">
-          {experience.companyName ? experience.companyName : "No company name"}
+          {experience.companyName
+            ? experience.companyName
+            : "Empty company name"}
         </h4>
       )}
     </div>

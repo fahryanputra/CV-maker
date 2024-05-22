@@ -26,7 +26,9 @@ function Education({ data, setData, onChange, isActive, onShow, removeForm }) {
 
   return (
     <form className="education form-section">
-      <h2 onClick={onShow}>Education</h2>
+      <h2 onClick={onShow}>
+        <span className="material-symbols-outlined">school</span>Education
+      </h2>
       {isActive &&
         data.educations.map((education, index) => (
           <EducationForm
@@ -42,7 +44,7 @@ function Education({ data, setData, onChange, isActive, onShow, removeForm }) {
         ))}
       {isActive && data.educations.length < 3 && (
         <button onClick={(e) => addEducation(data, setData, e)}>
-          Add education
+          <span className="material-symbols-outlined">add</span>
         </button>
       )}
     </form>
