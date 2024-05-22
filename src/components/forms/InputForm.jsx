@@ -3,6 +3,7 @@ import PersonalDetails from "./PersonalDetails";
 import Education from "./Education";
 import Experience from "./Experience";
 import { useState } from "react";
+import { jsPDF } from "jspdf";
 
 function InputForm({ data, setData }) {
   function handleChange(e, formName, id, inputName) {
@@ -12,6 +13,16 @@ function InputForm({ data, setData }) {
         if (element.id === id) element[inputName] = e.target.value;
         return element;
       }),
+    });
+  }
+
+  function printResume() {
+    const resume = new jsPDF("portrait", "pt", "a4");
+    let pageCount = resume.internal.getNumberOfPages();
+
+    resume.html(document.querySelector(".resume")).then(() => {
+      resume.deletePage(pageCount + 1);
+      resume.save("resume.pdf");
     });
   }
 
@@ -53,6 +64,8 @@ function InputForm({ data, setData }) {
         onShow={() => toggleFormVisibility(2)}
         removeForm={removeForm}
       />
+
+      <button onClick={printResume}>Save Resume as PDF</button>
     </div>
   );
 }
