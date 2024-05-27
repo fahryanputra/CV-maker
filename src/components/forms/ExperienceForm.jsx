@@ -65,7 +65,7 @@ function ExperienceForm({
             id={"experience-location-" + index}
             labelText="Company's Location"
             type="text"
-            placeholder="Company's location"
+            placeholder="City, country"
             onChange={(e) => onChange(e, formName, experience.id, "location")}
             value={experience.location}
           />

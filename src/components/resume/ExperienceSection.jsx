@@ -2,7 +2,7 @@ import "../../styles/ExperienceSection.css";
 
 function ExperiencePreview(experience) {
   return (
-    <div key={experience.id}>
+    <div className="resume-experience" key={experience.id}>
       <div className="resume-company">
         <div className="company-name">
           {experience.companyName ? (
@@ -40,11 +40,7 @@ function ExperiencePreview(experience) {
         </div>
       </div>
       <div className="resume-description">
-        {experience.description ? (
-          <p>{experience.description}</p>
-        ) : (
-          <p>Job Description</p>
-        )}
+        {experience.description && <p>{experience.description}</p>}
       </div>
     </div>
   );
@@ -53,7 +49,7 @@ function ExperiencePreview(experience) {
 function ExperienceSection({ data }) {
   return (
     <div>
-      <h2>Experience</h2>
+      <h2>Experiences</h2>
       <hr />
       {data.experiences.map((experience) => ExperiencePreview(experience))}
     </div>

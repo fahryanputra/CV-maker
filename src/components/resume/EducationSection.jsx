@@ -2,7 +2,7 @@ import "../../styles/EducationSection.css";
 
 function EducationPreview(education) {
   return (
-    <div key={education.id}>
+    <div className="resume-education" key={education.id}>
       <div className="resume-school">
         <div>
           {education.school ? <p>{education.school}</p> : <p>School</p>}
@@ -38,7 +38,7 @@ function EducationPreview(education) {
 function EducationSection({ data }) {
   return (
     <div>
-      <h2>Education</h2>
+      <h2>Educations</h2>
       <hr />
       {data.educations.map((education) => EducationPreview(education))}
     </div>

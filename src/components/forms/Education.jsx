@@ -27,7 +27,7 @@ function Education({ data, setData, onChange, isActive, onShow, removeForm }) {
   return (
     <form className="education form-section">
       <h2 onClick={onShow}>
-        <span className="material-symbols-outlined">school</span>Education
+        <span className="material-symbols-outlined">school</span>Educations
       </h2>
       {isActive &&
         data.educations.map((education, index) => (
@@ -43,7 +43,10 @@ function Education({ data, setData, onChange, isActive, onShow, removeForm }) {
           />
         ))}
       {isActive && data.educations.length < 3 && (
-        <button onClick={(e) => addEducation(data, setData, e)}>
+        <button
+          className="button-add"
+          onClick={(e) => addEducation(data, setData, e)}
+        >
           <span className="material-symbols-outlined">add</span>
         </button>
       )}

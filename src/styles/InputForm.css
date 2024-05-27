@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 textarea {
@@ -10,37 +11,66 @@ textarea {
   max-height: 200px;
 }
 
+.input-form > form > div,
+.input-form > form > h2,
+.button-add {
+  background-color: white;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.button-add {
+  box-shadow: none;
+  background-color: lightblue;
+}
+
+.button-download {
+  background-color: lightgreen;
+}
+
 .input-form > form > h2 {
-  border: 2px solid black;
-  padding: 0.5rem;
-  border-radius: 10px;
   margin-bottom: 0.5rem;
   display: flex;
   gap: 0.5rem;
+  padding: 1rem;
 }
 
-.input-form > form > button {
+.button-add {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  padding: 1px;
 }
 
-.input-form > form > button > span {
-  font-size: 32px;
-  font-weight: bold;
+.button-add span {
+  font-size: 40px;
 }
 
 .input-form > form .collapsed {
-  border: 2px solid black;
+  display: flex;
   padding: 0.5rem;
-  border-radius: 10px;
   margin: 0;
 }
 
 .input-form > form .visible {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.input-form > form .button-delete.container {
+.input-form > form > .visible > div > .button-delete.container {
   display: flex;
   justify-content: end;
+}
+
+.input-form > form > .visible > div > .button-delete.container > button {
+  background-color: lightcoral;
+  display: block;
+  flex-grow: 0;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

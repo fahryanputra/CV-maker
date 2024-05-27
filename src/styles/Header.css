@@ -1,0 +1,8 @@
+.header {
+  background-color: #393e46;
+  color: #eeeeee;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  font-family: "Montserrat", sans-serif;
+}

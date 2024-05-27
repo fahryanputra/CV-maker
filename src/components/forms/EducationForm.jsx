@@ -50,7 +50,7 @@ function EducationForm({
             id={"education-location-" + index}
             labelText="Location"
             type="text"
-            placeholder="School's location"
+            placeholder="City, country"
             onChange={(e) => onChange(e, formName, education.id, "location")}
             value={education.location}
           />

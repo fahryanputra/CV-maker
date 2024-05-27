@@ -1,3 +1,15 @@
+.resume-education {
+  margin-bottom: 0.5rem;
+}
+
+.resume-education > div {
+  margin: 0;
+}
+
+.resume-education > div p {
+  margin: 2px;
+}
+
 .resume-school {
   display: flex;
   font-weight: bold;

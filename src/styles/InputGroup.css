@@ -4,3 +4,15 @@
   width: 15rem;
   margin-bottom: 1rem;
 }
+
+.input-group label {
+  font-weight: bold;
+}
+
+.input-group textarea,
+.input-group input {
+  border-radius: 0.5rem;
+  border-style: none;
+  background-color: #e5e5e5;
+  padding: 0.5rem;
+}

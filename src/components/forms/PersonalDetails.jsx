@@ -43,13 +43,13 @@ function PersonalDetails({ data, setData }) {
           id="address"
           labelText="Address"
           type="textarea"
-          placeholder="Home address"
+          placeholder="City, country"
           onChange={(e) => handleChange(e, "address")}
           value={data.personalDetails.address}
         />
         <InputGroup
           id="profile"
-          labelText="Personal profile"
+          labelText="Self Description (optional)"
           type="textarea"
           placeholder="Short summary about yourself"
           onChange={(e) => handleChange(e, "profile")}

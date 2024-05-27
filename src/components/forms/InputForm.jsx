@@ -65,7 +65,11 @@ function InputForm({ data, setData }) {
         removeForm={removeForm}
       />
 
-      <button onClick={printResume}>Save Resume as PDF</button>
+      <button className="button-download" onClick={printResume}>
+        <p>
+          <span className="material-symbols-outlined">save</span>Download resume
+        </p>
+      </button>
     </div>
   );
 }

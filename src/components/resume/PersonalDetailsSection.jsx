@@ -38,11 +38,7 @@ function PersonalDetailsSection({ data }) {
         </div>
       </div>
       <div className="resume-profile">
-        {data.personalDetails.profile ? (
-          <p>{data.personalDetails.profile}</p>
-        ) : (
-          <p>Self Description</p>
-        )}{" "}
+        {data.personalDetails.profile && <p>{data.personalDetails.profile}</p>}
       </div>
     </div>
   );

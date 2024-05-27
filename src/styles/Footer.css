@@ -1,0 +1,9 @@
+.footer {
+  background-color: #393e46;
+  color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
