@@ -1,29 +1,29 @@
-import "../../styles/ExperienceSection.css";
+import "../../styles/ResumeContent.css";
 
 function ExperiencePreview(experience) {
   return (
-    <div className="resume-experience" key={experience.id}>
-      <div className="resume-company">
-        <div className="company-name">
+    <div className="resume-content" key={experience.id}>
+      <div className="first-line">
+        <div className="left-column">
           {experience.companyName ? (
             <p>{experience.companyName}</p>
           ) : (
             <p>Company Name</p>
           )}
         </div>
-        <div className="company-location">
+        <div className="right-column">
           {experience.location ? <p>{experience.location}</p> : <p>Location</p>}
         </div>
       </div>
-      <div className="resume-job">
-        <div>
+      <div className="second-line">
+        <div className="left-column">
           {experience.positionTitle ? (
             <p>{experience.positionTitle}</p>
           ) : (
             <p>Position Title</p>
           )}
         </div>
-        <div className="job-date">
+        <div className="right-column">
           <p>
             {experience.startDate ? (
               <span>{experience.startDate}</span>
@@ -39,7 +39,7 @@ function ExperiencePreview(experience) {
           </p>
         </div>
       </div>
-      <div className="resume-description">
+      <div className="third-line">
         {experience.description && <p>{experience.description}</p>}
       </div>
     </div>

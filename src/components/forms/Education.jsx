@@ -25,7 +25,7 @@ function Education({ data, setData, onChange, isActive, onShow, removeForm }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <form className="education form-section">
+    <form className="form-section">
       <h2 onClick={onShow}>
         <span className="material-symbols-outlined">school</span>Educations
       </h2>

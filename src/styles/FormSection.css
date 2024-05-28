@@ -1,0 +1,68 @@
+.form-section > div,
+.form-section > h2,
+.button-add {
+  background-color: white;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.form-section > h2:hover,
+.form-section > div:hover {
+  cursor: pointer;
+}
+
+.form-section > h2 {
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.button-add {
+  box-shadow: none;
+  background-color: lightblue;
+}
+
+.button-download {
+  background-color: lightgreen;
+}
+
+.button-add {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.button-add span {
+  font-size: 40px;
+}
+
+.collapsed {
+  display: flex;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+.visible {
+  margin-bottom: 1rem;
+}
+
+.button-delete.container {
+  display: flex;
+  justify-content: end;
+}
+
+.button-delete.container > button {
+  background-color: lightcoral;
+  display: block;
+  flex-grow: 0;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

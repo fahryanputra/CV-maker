@@ -2,28 +2,3 @@
   display: flex;
   justify-content: space-evenly;
 }
-
-button {
-  background: white;
-  border-style: none;
-  border-radius: 5px;
-  padding: 0.5rem;
-  font-size: 14px;
-}
-
-button:hover,
-.input-form > form > h2:hover,
-.input-form > form > div:hover {
-  cursor: pointer;
-}
-
-button:hover {
-  filter: brightness(85%);
-}
-
-button > p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}

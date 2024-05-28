@@ -1,29 +1,29 @@
-.resume-education {
+.resume-content {
   margin-bottom: 0.5rem;
 }
 
-.resume-education > div {
+.resume-content > div {
   margin: 0;
 }
 
-.resume-education > div p {
+.resume-content > div p {
   margin: 2px;
 }
 
-.resume-school {
+.first-line {
   display: flex;
   font-weight: bold;
 }
 
-.resume-school > .school-location {
+.first-line > .right-column {
   margin-left: auto;
 }
 
-.resume-degree {
+.second-line {
   display: flex;
   font-weight: bold;
 }
 
-.resume-degree > .degree-date {
+.second-line > .right-column {
   margin-left: auto;
 }

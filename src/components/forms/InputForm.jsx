@@ -1,4 +1,5 @@
 import "../../styles/InputForm.css";
+import "../../styles/FormSection.css";
 import PersonalDetails from "./PersonalDetails";
 import Education from "./Education";
 import Experience from "./Experience";

@@ -26,7 +26,7 @@ function Experience({ data, setData, onChange, isActive, onShow, removeForm }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <form className="experience form-section">
+    <form className="form-section">
       <h2 onClick={onShow}>
         <span className="material-symbols-outlined">work</span>Experiences
       </h2>

@@ -1,21 +1,21 @@
-import "../../styles/EducationSection.css";
+import "../../styles/ResumeContent.css";
 
 function EducationPreview(education) {
   return (
-    <div className="resume-education" key={education.id}>
-      <div className="resume-school">
-        <div>
+    <div className="resume-content" key={education.id}>
+      <div className="first-line">
+        <div className="left-column">
           {education.school ? <p>{education.school}</p> : <p>School</p>}
         </div>
-        <div className="school-location">
+        <div className="right-column">
           {education.location ? <p>{education.location}</p> : <p>Location</p>}
         </div>
       </div>
-      <div className="resume-degree">
-        <div>
+      <div className="second-line">
+        <div className="left-column">
           {education.degree ? <p>{education.degree}</p> : <p>Degree</p>}
         </div>
-        <div className="degree-date">
+        <div className="right-column">
           <p>
             {education.startDate ? (
               <span>{education.startDate}</span>

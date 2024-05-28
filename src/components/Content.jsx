@@ -1,4 +1,5 @@
 import "../styles/Content.css";
+import "../styles/Button.css";
 import Resume from "./resume/Resume";
 import InputForm from "./forms/InputForm";
 import { useState } from "react";

@@ -9,8 +9,14 @@
   font-weight: bold;
 }
 
-.input-group textarea,
-.input-group input {
+textarea {
+  resize: vertical;
+  min-height: 50px;
+  max-height: 200px;
+}
+
+textarea,
+input {
   border-radius: 0.5rem;
   border-style: none;
   background-color: #e5e5e5;
