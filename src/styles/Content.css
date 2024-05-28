@@ -1,4 +1,13 @@
 .content {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media (max-width: 480px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
 }
